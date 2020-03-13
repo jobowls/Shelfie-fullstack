@@ -1,0 +1,5 @@
+DELETE FROM shelf
+WHERE id = $1;
+
+SELECT * FROM shelf
+ORDER BY id DESC;
