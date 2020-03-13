@@ -37,10 +37,11 @@ class Dashboard extends Component {
         }).catch(err => console.log(err))
     }
     render() {
+       let feed = this.state.inventory.map(item => (<Product key={item.id} editProduct={this.editProduct} deleteProduct={this.deleteProduct} product={item} />))
         return (
             <div>
                 <div id='home-feed' >
-                    {this.state.inventory.map(item => (<Product key={item.id} editProduct={this.editProduct} deleteProduct={this.deleteProduct} product={item} />))}
+                    {feed}
                 </div>
             </div>
         )

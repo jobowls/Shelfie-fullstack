@@ -4,24 +4,26 @@ import {Link, withRouter} from 'react-router-dom'
 const Product = (props) => {
     const {deleteProduct, editProduct} = props
     const {id, name, price, img} = props.product
+
     return (
-        <section>
-            <div>
+        <div className='storefront' >
+            <div id='storefront'>
                 <div>
                     <h2> {name} </h2>
                     <h3> ${price} </h3>
                 </div>
                 <div>
-                    <div>
-                        <img src={img} alt="" />
-                    <Link to={`/form/${id}`} >
+                    <img id='product-shot' src={img} alt="" />
+                </div>
+                <div>
+                    <Link to={`/form/${id}`} > 
                         <button onClick={() => editProduct(id)}> Edit </button> 
                     </Link>
-                        <button onClick={() => deleteProduct(id)}> Delete </button>
-                    </div>
+                    <button onClick={() => deleteProduct(id)}> Delete </button>
                 </div>
-            </div>            
-        </section>
+            </div>
+            
+        </div>
     )
 }
 export default withRouter(Product)

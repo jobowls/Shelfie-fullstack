@@ -69,9 +69,12 @@ class Form extends Component {
     render() {
         const {edit, name, price, img} = this.state
         return (
-            <div>
-                <div>
-                    <img src={logo} alt='' />
+            <div className='form'>
+                <div id='form-container' >
+                    <div>
+                        <div id='details'>
+                            <img alt='' src={img} id='form-product' />
+                        </div>
                     <h3> Update Product Image: </h3>
                     <input name='img' value={img} placeholder='Upload Image' onChange={(e) => this.handleChange(e.target)} />
                     <input name='name' value={name} placeholder='Product Title' onChange={(e) => this.handleChange(e.target)} />
@@ -84,6 +87,7 @@ class Form extends Component {
                     }
 
                     <button onClick={this.clearInputs} > Cancel </button>
+                    </div>
                 </div>
 
             </div>
